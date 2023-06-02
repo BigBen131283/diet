@@ -1,0 +1,25 @@
+@import '../base/typography';
+@import '../base/reset';
+@import '../layout/menu';
+@import '../layout/footer';
+
+header{
+    flex-grow: 1;
+    min-height: 800px;
+    position: relative;
+
+    h1{
+        font-family: Bangers, sans-serif;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6rem;
+    }
+}
+
+main{
+    flex-grow: 1;
+    min-height: 800px;
+}
+
