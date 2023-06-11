@@ -1,7 +1,13 @@
 let date = new Date();
 
-let months =  [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
-let mois = [ 'Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec' ];
+const addCalendarBtn = document.querySelector('.add-month');
+const calendar = document.querySelector('.calendar')
+// console.dir(calendar);
+
+const months =  [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
+const mois = [ 'Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec' ];
+const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'SaT', 'Sun'];
 
 function getCurrentDate() {
     let day = date.getDate();
@@ -18,9 +24,4 @@ function getCurrentDate() {
 }
 
 let currentDate = getCurrentDate();
-
-function createCalendar(month){
-    
-}
-
 console.log(currentDate);

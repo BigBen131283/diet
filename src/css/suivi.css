@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@font-face {
+  font-family: "Scratchy";
+  src: url(../../fonts/scratchy/Scratchy.ttf); }
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+ul {
+  list-style: none; }
+
+button, input, select {
+  margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+img, video {
+  height: auto;
+  max-width: 100%; }
+
+iframe {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+.nav-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: #333; }
+  .nav-container nav ul {
+    display: flex; }
+    .nav-container nav ul .nav-button a {
+      font-size: 2.5rem;
+      text-decoration: none;
+      color: #f1f1f1;
+      padding: 5px 0px;
+      margin: 0px 20px;
+      position: relative;
+      width: 100%; }
+      .nav-container nav ul .nav-button a::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #f1f1f1;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out; }
+      .nav-container nav ul .nav-button a:hover::after {
+        transform: scaleX(1); }
+
+header {
+  flex-grow: 1;
+  position: relative; }
+
+main {
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+  main h1 {
+    font-size: 4rem;
+    font-family: Bangers, sans-serif;
+    padding: 20px 0; }
+
+.calendars {
+  max-width: 1400px;
+  width: 70%;
+  background: #333;
+  font-family: Bangers, sans-serif;
+  padding: 20px; }
+  .calendars__tab-content {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; }
+  .calendars__tab {
+    width: 100px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #f1f1f1;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    border: 1px solid #333; }
+    .calendars__tab--is-active {
+      width: 100px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background: #333;
+      color: #f1f1f1;
+      border: 1px solid #f1f1f1; }
+    .calendars__tab__add-tab {
+      width: 40px;
+      font-size: 4rem; }
+  .calendars hr {
+    border: 1px solid #f1f1f1; }

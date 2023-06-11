@@ -2,6 +2,7 @@
 @import '../base/reset';
 @import '../layout/menu';
 @import '../layout/footer';
+@import '../utils/variables';
 
 header{
     flex-grow: 1;
@@ -9,7 +10,7 @@ header{
     position: relative;
 
     h1{
-        font-family: Bangers, sans-serif;
+        font-family: $base;
         position: absolute;
         top: 40%;
         left: 50%;
