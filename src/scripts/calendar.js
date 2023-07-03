@@ -25,3 +25,33 @@ function getCurrentDate() {
 
 let currentDate = getCurrentDate();
 console.log(currentDate);
+
+/////////////////////////////////////////////////////////////////////////////////
+// Gestion des onglets
+/////////////////////////////////////////////////////////////////////////////////
+
+const tabMonths = Array.from(document.querySelectorAll('.month'));
+const monthContents = Array.from(document.querySelectorAll('.days-container'));
+
+tabMonths.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+        
+        for(let i=0; i < tabMonths.length; i++){
+            if(tabMonths[i] === e.target){
+                tabMonths[i].classList.add('is-active');
+            }else{
+                tabMonths[i].classList.remove('is-active');
+            }
+        }
+        
+        for(let i=0; i < monthContents.length; i++){
+            if(i === tabMonths.indexOf(e.target)){
+                monthContents[i].classList.add('is-active');
+            }else{
+                monthContents[i].classList.remove('is-active');
+            }
+        }
+    })
+})
+/////////////////////////////////////////////////////////////////////////////////
+
