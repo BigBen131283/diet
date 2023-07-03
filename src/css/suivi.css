@@ -177,9 +177,11 @@ main {
         grid-template-columns: repeat(7, 1fr);
         width: 75%;
         gap: 4px;
-        opacity: 0; }
+        opacity: 0;
+        z-index: -1; }
         .calendars .table-container .month-container .days-container.is-active {
-          animation: fade 0.5s forwards; }
+          animation: fade 0.5s forwards;
+          z-index: 0; }
         .calendars .table-container .month-container .days-container .day {
           text-align: center;
           line-height: 100px;
