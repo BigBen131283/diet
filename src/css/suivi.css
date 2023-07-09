@@ -101,50 +101,53 @@ main {
   background: #333;
   font-family: Bangers, sans-serif;
   padding: 20px; }
-  .calendars .tab-content {
-    height: 40px;
-    width: 100%;
+  .calendars .tab-container {
     display: flex;
     justify-content: flex-start; }
-  .calendars .month {
-    width: 100px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background: #f1f1f1;
-    cursor: pointer;
-    text-align: center;
-    line-height: 40px;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    border: 1px solid #333; }
-    .calendars .month:hover {
-      background: #333;
-      color: #f1f1f1;
-      border: 1px solid #f1f1f1; }
-    .calendars .month.is-active {
+    .calendars .tab-container .tab-content {
+      height: 40px;
+      display: flex;
+      justify-content: flex-start; }
+    .calendars .tab-container .month {
       width: 100px;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      background: #333;
-      color: #f1f1f1;
-      border: 1px solid #f1f1f1; }
-  .calendars .add-tab {
-    width: 40px;
-    font-size: 4rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background: #f1f1f1;
-    cursor: pointer;
-    text-align: center;
-    line-height: 40px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    border: 1px solid #333; }
-    .calendars .add-tab:hover {
-      background: #333;
-      color: #f1f1f1;
-      border: 1px solid #f1f1f1; }
+      background: #f1f1f1;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      border: 1px solid #333; }
+      .calendars .tab-container .month:hover {
+        background: #333;
+        color: #f1f1f1;
+        border: 1px solid #f1f1f1; }
+      .calendars .tab-container .month.is-active {
+        width: 100px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #333;
+        color: #f1f1f1;
+        border: 1px solid #f1f1f1; }
+    .calendars .tab-container .add-tab {
+      width: 40px;
+      height: 40px;
+      font-size: 4rem;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background: #f1f1f1;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      border: 1px solid #333; }
+      .calendars .tab-container .add-tab:hover {
+        background: #333;
+        color: #f1f1f1;
+        border: 1px solid #f1f1f1; }
   .calendars hr {
     border: 1px solid #f1f1f1; }
   .calendars .table-container {
