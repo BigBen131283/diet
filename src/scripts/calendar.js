@@ -4,10 +4,9 @@ let date = new Date();
 
 const addCalendarBtn = document.querySelector('.add-month');
 const calendar = document.querySelector('.calendar')
-// console.dir(calendar);
 
 const months =  [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
-const mois = [ 'Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec' ];
+const mois = [ 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ];
 const joursSemaine = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'SaT'];
 
@@ -18,7 +17,7 @@ function getCurrentDate() {
     
     return {
         'day': day,
-        'month': month + 1,
+        'month': month,
         'monthName': mois[month],
         'year': year,
         'numberOfDays': new Date(year, month + 1, 0).getDate()
@@ -33,7 +32,12 @@ function getFirstDayofMonth(year, month) {
     return dayName;
 }
 
-console.log(getFirstDayofMonth(2023, 11));
+function getNumberOfDays(year, month) {
+    const numberOfDays = new Date(year, month + 1, 0).getDate();
+    return numberOfDays;
+}
+
+// console.log(getFirstDayofMonth(2023, 11));
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -77,6 +81,7 @@ function handleTab() {
 
 const addMonthBtn = document.querySelector('.add-tab');
 const tabs = document.querySelector('.tab-content');
+const arrayTabs = [];
 
 addMonthBtn.addEventListener('click', () => {
     addTabMonth();
@@ -85,25 +90,56 @@ addMonthBtn.addEventListener('click', () => {
 
 function addTabMonth() {
     
-    console.log(tabMonths.length);
-
-    const arrayTabs = [];
-    
+    console.log(arrayTabs.length);
     if(tabMonths.length === 0){
         let currentDate = getCurrentDate();
+        
+        const newTabObj = new Tab();
+        newTabObj.firstDay = getFirstDayofMonth(currentDate.year, currentDate.month);
+        newTabObj.month = currentDate.monthName;
+        newTabObj.year = currentDate.year;
+        newTabObj.numberOfDays = currentDate.numberOfDays;
+        arrayTabs.push(newTabObj);
+        
         const newTab = document.createElement('div');
         newTab.classList.add('month');
-        newTab.innerText = currentDate.monthName;
+        newTab.innerText = newTabObj.month;
         tabs.appendChild(newTab);
-        tabMonths.push(newTab);
-
-        const newTabObj = new Tab();
-        arrayTabs.push(newTabObj);
-        console.log(arrayTabs);
-
-        // console.log(currentDate.monthName);
     }else{
-        console.log(tabMonths);
+        const lastAddedMonth = arrayTabs[arrayTabs.length - 1];
+        const indexOfMonth = mois.indexOf(lastAddedMonth.month);
+        let newIndexOfMonth;
+        let newMonth;
+        let newYear;
+        
+        if(indexOfMonth === 11){
+            newIndexOfMonth = 0;
+        }else{
+            newIndexOfMonth = indexOfMonth + 1;
+        }
+        
+        newMonth = mois[newIndexOfMonth];
+        
+        if(newMonth === "Janvier"){
+            newYear = lastAddedMonth.year + 1;
+        }else{
+            newYear = lastAddedMonth.year
+        }
+        
+        const newFirstDay = getFirstDayofMonth(newYear, newIndexOfMonth);       
+        const newNumberOfDays = getNumberOfDays(newYear, newIndexOfMonth);
+        
+        const newTabObj = new Tab();
+        newTabObj.firstDay = newFirstDay;
+        newTabObj.month = newMonth;
+        newTabObj.year = newYear;
+        newTabObj.newNumberOfDays = newNumberOfDays;
+        arrayTabs.push(newTabObj);
+        
+        const newTab = document.createElement('div');
+        newTab.classList.add('month');
+        newTab.innerText = newMonth;
+        tabs.appendChild(newTab);
     }
 }
 
