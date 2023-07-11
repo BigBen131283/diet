@@ -85,13 +85,14 @@ const arrayTabs = [];
 
 addMonthBtn.addEventListener('click', () => {
     addTabMonth();
+    createCalendarMonth();
     handleTab();
 })
 
 function addTabMonth() {
     
-    console.log(arrayTabs.length);
-    if(tabMonths.length === 0){
+    
+    if(arrayTabs.length === 0){
         let currentDate = getCurrentDate();
         
         const newTabObj = new Tab();
@@ -133,7 +134,7 @@ function addTabMonth() {
         newTabObj.firstDay = newFirstDay;
         newTabObj.month = newMonth;
         newTabObj.year = newYear;
-        newTabObj.newNumberOfDays = newNumberOfDays;
+        newTabObj.numberOfDays = newNumberOfDays;
         arrayTabs.push(newTabObj);
         
         const newTab = document.createElement('div');
@@ -141,6 +142,10 @@ function addTabMonth() {
         newTab.innerText = newMonth;
         tabs.appendChild(newTab);
     }
+}
+
+function createCalendarMonth() {
+    console.log(arrayTabs);
 }
 
 /////////////////////////////////////////////////////////////////////////////////
