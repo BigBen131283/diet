@@ -37,19 +37,18 @@ function getNumberOfDays(year, month) {
     return numberOfDays;
 }
 
-// console.log(getFirstDayofMonth(2023, 11));
-
-
 /////////////////////////////////////////////////////////////////////////////////
 // Gestion des onglets
 /////////////////////////////////////////////////////////////////////////////////
 
 let tabMonths = [];
-const monthContents = Array.from(document.querySelectorAll('.days-container'));
+let monthContents = [];
 
 function handleTab() {
     
     tabMonths = Array.from(document.querySelectorAll('.month'));
+    monthContents = Array.from(document.querySelectorAll('.days-container'));
+
     tabMonths.forEach(tab => {
         tab.addEventListener('click', (e) => {
             
@@ -81,6 +80,7 @@ function handleTab() {
 
 const addMonthBtn = document.querySelector('.add-tab');
 const tabs = document.querySelector('.tab-content');
+const monthContainer = document.querySelector('.month-container');
 const arrayTabs = [];
 
 addMonthBtn.addEventListener('click', () => {
@@ -145,7 +145,21 @@ function addTabMonth() {
 }
 
 function createCalendarMonth() {
-    console.log(arrayTabs);
+    
+    const lastAddedMonth = arrayTabs[arrayTabs.length - 1];
+    console.log(lastAddedMonth);
+
+    const dayContainer = document.createElement('div')
+    dayContainer.classList.add('days-container', lastAddedMonth.month+lastAddedMonth.year);
+    
+    for(let i = 1; i < lastAddedMonth.numberOfDays +1; i++) {
+        const day = document.createElement('div');
+        day.classList.add('day', lastAddedMonth.firstDay)
+        day.innerText = i;
+        dayContainer.appendChild(day);
+    }
+
+    monthContainer.appendChild(dayContainer);
 }
 
 /////////////////////////////////////////////////////////////////////////////////

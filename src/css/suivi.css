@@ -200,7 +200,17 @@ main {
           .calendars .table-container .month-container .days-container .day.is-active {
             background-color: #333;
             color: #f1f1f1; }
-          .calendars .table-container .month-container .days-container .day.mai2023:nth-child(1) {
+          .calendars .table-container .month-container .days-container .day.lundi:nth-child(1) {
             grid-column-start: 1; }
-          .calendars .table-container .month-container .days-container .day.juin2023:nth-child(1) {
+          .calendars .table-container .month-container .days-container .day.mardi:nth-child(1) {
+            grid-column-start: 2; }
+          .calendars .table-container .month-container .days-container .day.mercredi:nth-child(1) {
+            grid-column-start: 3; }
+          .calendars .table-container .month-container .days-container .day.jeudi:nth-child(1) {
             grid-column-start: 4; }
+          .calendars .table-container .month-container .days-container .day.vendredi:nth-child(1) {
+            grid-column-start: 5; }
+          .calendars .table-container .month-container .days-container .day.samedi:nth-child(1) {
+            grid-column-start: 6; }
+          .calendars .table-container .month-container .days-container .day.dimanche:nth-child(1) {
+            grid-column-start: 7; }

@@ -165,11 +165,26 @@ main{
                         color: #f1f1f1;
                     }
 
-                    &.mai2023:nth-child(1){
+                    &.lundi:nth-child(1){
                         grid-column-start: 1;
                     }
-                    &.juin2023:nth-child(1){
+                    &.mardi:nth-child(1){
+                        grid-column-start: 2;
+                    }
+                    &.mercredi:nth-child(1){
+                        grid-column-start: 3;
+                    }
+                    &.jeudi:nth-child(1){
                         grid-column-start: 4;
+                    }
+                    &.vendredi:nth-child(1){
+                        grid-column-start: 5;
+                    }
+                    &.samedi:nth-child(1){
+                        grid-column-start: 6;
+                    }
+                    &.dimanche:nth-child(1){
+                        grid-column-start: 7;
                     }
                 }
             }
