@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon suivi</title>
     <link rel="stylesheet" href="./src/css/suivi.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header>
@@ -23,31 +25,38 @@
     
     <main>
         <h1>Suivi des repas</h1>
-        <div class="calendars">
+        <div class="tabs">
             <div class="tab-container">
-                <div class="tab-content">
-                    <!--<div class="month">Mai</div>-->
-                    <!--<div class="month">Juin</div>-->
-                </div>
                 <div class="add-tab">+</div>
-            </div>
-            <hr>
-            <div class="table-container">
-                <div class="week">
-                    <div class="day">Lundi</div>
-                    <div class="day">Mardi</div>
-                    <div class="day">Mercredi</div>
-                    <div class="day">Jeudi</div>
-                    <div class="day">Vendredi</div>
-                    <div class="day">Samedi</div>
-                    <div class="day">Dimanche</div>
+                <ion-icon name="chevron-back-outline"></ion-icon>
+                <div class="tab-content">
+                    <!-- Created by JS -->
                 </div>
-                <hr>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="follow-container">
+
+            </div>
+
+            <div class="calendars-container">
+                <div class="week">
+                    <div class="day">L</div>
+                    <div class="day">M</div>
+                    <div class="day">M</div>
+                    <div class="day">J</div>
+                    <div class="day">V</div>
+                    <div class="day">S</div>
+                    <div class="day">D</div>
+                </div>
                 <div class="month-container">
                     <!-- Created by JS -->
                 </div>
             </div>
         </div>
+
     </main>
     
     <footer>

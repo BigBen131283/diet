@@ -26,7 +26,7 @@ main{
     }
 }
 
-.calendars{
+.tabs{
     max-width: 1400px;
     width: 70%;
     background: #333;
@@ -39,7 +39,8 @@ main{
 
         .tab-content{
             height: 40px;
-            // width: 100%;
+            max-width: 100%;
+            overflow: hidden;
             display: flex;
             justify-content: flex-start;
         }
@@ -78,8 +79,7 @@ main{
             width: 40px;
             height: 40px;
             font-size: 4rem;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-radius: 50%;
             background: #f1f1f1;
             cursor: pointer;
             text-align: center;
@@ -94,98 +94,111 @@ main{
                 border: 1px solid #f1f1f1;
             }
         }
-    }
-    
-    hr{
-        border: 1px solid #f1f1f1;
-    }
-    
-    .table-container{
-        width: 100%;
-        min-height: 560px;
 
-        .week{
-            margin: 2px 0;
+        ion-icon{
+            width: 40px;
+            height: 40px;
+            background: #f1f1f1;
+            color: #333;
+        }
+    }
+}    
+
+.main-container{
+    width: 70%;
+    max-width: 1400px;
+    min-height: 560px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+
+    .follow-container{
+        width: calc(100% - 380px);
+    }
+}
+
+.calendars-container{
+    width: 360px;
+    
+    .week{
+        margin: 2px 0;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        width: 100%;
+        height: 40px;
+    
+        .day{
+            color: #333;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 2rem;
+            background: #f1f1f1;
+            border-radius: 50%;
+            margin: 4px;
+        }
+    }
+
+    .month-container{
+        position: relative;
+        margin-top: 8px;
+    
+        .days-container{
+            position: absolute;
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            width: 75%;
-            height: 40px;
-
+            width: 100%;
+            opacity: 0;
+            z-index: -1;
+    
+            &.is-active{
+                animation: fade 0.5s forwards;
+                z-index: 0;
+            }
+    
             .day{
-                color: #333;
-                height: 40px;
                 text-align: center;
                 line-height: 40px;
-                font-size: 2rem;
-                background: #f1f1f1;
+                width: 40px;
+                height: 40px;
+                margin: 4px;
+                font-size: 3rem;
+                background-color: #f1f1f1;
+                border-radius: 50%;
+                transition: all .2s ease-in;
+                cursor: pointer;
                 
-                &:first-child{
-                    border-top-left-radius: 5px;
+                &:hover{
+                    background-color: #333;
+                    color: #f1f1f1;
+                    transform: scale(1.15);
                 }
-                &:last-child{
-                    border-top-right-radius: 5px;
-                }
-            }
-        }
-        .month-container{
-            position: relative;
-            margin-top: 2px;
-
-            .days-container{
-                position: absolute;
-                display: grid;
-                grid-template-columns: repeat(7, 1fr);
-                width: 75%;
-                gap: 4px;
-                opacity: 0;
-                z-index: -1;
-
                 &.is-active{
-                    animation: fade 0.5s forwards;
-                    z-index: 0;
+                    background-color: #333;
+                    color: #f1f1f1;
                 }
     
-                .day{
-                    text-align: center;
-                    line-height: 100px;
-                    font-size: 4rem;
-                    background-color: #f1f1f1;
-                    border-radius: 2px;
-                    transition: all .2s ease-in;
-                    cursor: pointer;
-                    
-                    &:hover{
-                        background-color: #333;
-                        color: #f1f1f1;
-                        transform: scale(1.15);
-                    }
-                    &.is-active{
-                        background-color: #333;
-                        color: #f1f1f1;
-                    }
-
-                    &.lundi:nth-child(1){
-                        grid-column-start: 1;
-                    }
-                    &.mardi:nth-child(1){
-                        grid-column-start: 2;
-                    }
-                    &.mercredi:nth-child(1){
-                        grid-column-start: 3;
-                    }
-                    &.jeudi:nth-child(1){
-                        grid-column-start: 4;
-                    }
-                    &.vendredi:nth-child(1){
-                        grid-column-start: 5;
-                    }
-                    &.samedi:nth-child(1){
-                        grid-column-start: 6;
-                    }
-                    &.dimanche:nth-child(1){
-                        grid-column-start: 7;
-                    }
+                &.lundi:nth-child(1){
+                    grid-column-start: 1;
+                }
+                &.mardi:nth-child(1){
+                    grid-column-start: 2;
+                }
+                &.mercredi:nth-child(1){
+                    grid-column-start: 3;
+                }
+                &.jeudi:nth-child(1){
+                    grid-column-start: 4;
+                }
+                &.vendredi:nth-child(1){
+                    grid-column-start: 5;
+                }
+                &.samedi:nth-child(1){
+                    grid-column-start: 6;
+                }
+                &.dimanche:nth-child(1){
+                    grid-column-start: 7;
                 }
             }
         }
